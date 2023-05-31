@@ -1,5 +1,5 @@
 import Button from "../shared/Button";
-
+import aircraft from '../../assets/aircraft.svg'
 const Banner = () => {
 	return (
 		<div className="bg-indigo-400 py-20 rounded-lg ">
@@ -16,8 +16,12 @@ const Banner = () => {
 						</p>
 						<Button to={"/shop"}>Shop Now</Button>
 					</div>
-					<div className="md:w-1/2">
-						<img src={"ace"} alt="Toy World" className="w-full " />
+					<div data-aos="fade-up" className="md:w-1/2">
+						<img
+							src={aircraft}
+							alt="Toy World"
+							className="w-full "
+						/>
 					</div>
 				</div>
 			</div>
