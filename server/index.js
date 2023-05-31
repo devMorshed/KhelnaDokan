@@ -35,7 +35,8 @@ const verifyJWT = (req, res, next) => {
 
 
 
-const uri = "mongodb://localhost:27017";
+
+const uri = process.env.DB_ACCESS_SECRET;
 
 const client = new MongoClient(uri, {
 	serverApi: {
@@ -50,8 +51,8 @@ async function run() {
 	client.db("admin").command({ ping: 1 });
 	console.log("Ahoy Admin! Welocome Onboard!");
 
-	const toysCollection = client.db("ToyVortex").collection("toys");
-	const catCollection = client.db("ToyVortex").collection("categories");
+	const toysCollection = client.db("KhelnnaDokan").collection("khelnas");
+	const catCollection = client.db("KhelnnaDokan").collection("categories");
 
 	const indexKeys = { name: 1 };
 	const indexOptions = { name: "titleCategory" };
@@ -113,7 +114,8 @@ async function run() {
 
 	app.get("/toy/:id", async (req, res) => {
 		const id = new ObjectId(req.params.id);
-		const query = { _id: id };
+    const query = { _id: id };
+    console.log(query);
 		const result = await toysCollection.findOne(query);
 		res.send(result);
 	});

@@ -27,7 +27,17 @@ const Header = () => {
 					<NavLink to={"/shop"}>Shop</NavLink>
 				</div>
 				{loading ? (
-					""
+					<div className="">
+						<NavLink to={"/profile"}>
+							<img
+								data-tooltip-id="profile"
+								data-tooltip-content={"user?.displayName"}
+								className=" w-8 h-8 sm:w-12 sm:h-12 rounded-full  bg-black"
+								src={"user?.photoURL"}
+								alt="Profile"
+							/>
+						</NavLink>
+					</div>
 				) : user ? (
 					<div className="">
 						<NavLink to={"/profile"}>
@@ -41,7 +51,7 @@ const Header = () => {
 						</NavLink>
 					</div>
 				) : (
-					<Button to={"/login"}>Log In</Button> 
+					<Button to={"/login"}>Log In</Button>
 				)}
 				<Tooltip id="profile" />
 			</div>

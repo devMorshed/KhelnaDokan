@@ -6,7 +6,9 @@ const Story = () => {
 	return (
 		<div
 			className="relative bg-cover bg-center bg-fixed rounded-lg"
-			style={{ backgroundImage: `url(${"backgroundImage"})` }}>
+			style={{
+				backgroundImage: `url(${"https://i.ibb.co/dQ6sskG/sunny.jpg"})`,
+			}}>
 			<div className="max-w-4xl mx-auto py-24 px-4">
 				<div className="flex items-center justify-between">
 					<div className="sm:w-1/2">

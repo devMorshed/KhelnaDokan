@@ -28,11 +28,9 @@ const AddProduct = () => {
 		shippingFrom: "",
 		tags: [],
 		seller: "",
-  });
+	});
 
-  const {cat} = useContext(myContext) //getting categories from contextProvider
-  
-
+	const { cat } = useContext(myContext); //getting categories from contextProvider
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -71,7 +69,7 @@ const AddProduct = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		fetch("http://localhost:5000/add", {
+		fetch("https://khelnadokan.vercel.app/add", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
@@ -82,16 +80,11 @@ const AddProduct = () => {
 			.then((data) => console.log(data));
 	};
 
-
-  
-
-
-
 	return (
 		<div className="my-10  container mx-auto ">
 			<h3 className=" text-center text-3xl tracking-tighter font-medium">
 				Add New Product
-      </h3>
+			</h3>
 
 			<form
 				onSubmit={handleSubmit}

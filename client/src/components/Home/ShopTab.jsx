@@ -9,11 +9,11 @@ const ShopTab = () => {
 	const [tabData, setTabData] = useState([]);
 
 	useEffect(() => {
-		fetch(`http://localhost:5000/tab/${currentTab}`)
+		fetch(`https://khelnadokan.vercel.app/tab/${currentTab}`)
 			.then((res) => res.json())
 			.then((data) => {
 				setTabData(data);
-			})
+			});
 	}, [currentTab]);
 
 	return (
@@ -31,7 +31,9 @@ const ShopTab = () => {
 							<Tab onClick={() => setCurrentTab("Marvel")}>
 								Marvel
 							</Tab>
-							<Tab onClick={() => setCurrentTab("DC Comics")}>DC</Tab>
+							<Tab onClick={() => setCurrentTab("DC Comics")}>
+								DC
+							</Tab>
 						</TabList>
 					</div>
 

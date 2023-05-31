@@ -24,10 +24,12 @@ const MyContextProvider = ({ children }) => {
 	const [cat, setCat] = useState();
 
 	useEffect(() => {
-		fetch("http://localhost:5000/cat")
+		fetch("https://khelnadokan.vercel.app/cat")
 			.then((res) => res.json())
 			.then((data) => setCat(data));
 	}, []);
+
+	console.log(cat);
 
 	// Register User
 	const handleSignUp = (email, password) => {

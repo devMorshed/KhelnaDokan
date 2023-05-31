@@ -84,7 +84,7 @@ const router = createBrowserRouter([
 					</PrivateRoute>
 				),
 				loader: ({ params }) =>
-					fetch(`https://toy-vortex.vercel.app/toy/${params.id}`),
+					fetch(`https://khelnadokan.vercel.app/toy/${params.id}`),
 			},
 			{
 				path: "/update/:id",
@@ -94,7 +94,7 @@ const router = createBrowserRouter([
 					</PrivateRoute>
 				),
 				loader: ({ params }) =>
-					fetch(`https://toy-vortex.vercel.app/toy/${params.id}`),
+					fetch(`https://khelnadokan.vercel.app/toy/${params.id}`),
 			},
 		],
 	},

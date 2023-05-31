@@ -8,7 +8,7 @@ import { Rating } from "@smastrom/react-rating";
 const ProductCard = ({product}) => {
   const { user } = useContext(myContext);
   
-  const { _id, name, price, ratings, photo, details } = product;
+  const { _id, name, price, ratings, images, details } = product;
 
 	const navigate = useNavigate();
 	const [isHovered, setIsHovered] = useState(false);
@@ -34,7 +34,7 @@ const ProductCard = ({product}) => {
 		<div
 			className="product-card bg-white rounded-lg shadow-lg p-4 mb-4"
 			data-aos="fade-up">
-			<img src={photo} alt={name} className="w-full max-w-[200px] mb-4" />
+			<img src={images[0]} alt={name} className="w-full max-w-[200px] mb-4" />
 			<h2 className="text-xl font-bold mb-2">{name}</h2>
 			<p className="text-gray-500 text-xs">{details}</p>
 			<div className="mt-4 flex justify-between items-center">

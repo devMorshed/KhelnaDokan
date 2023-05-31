@@ -6,14 +6,16 @@ import useTitle from "../hooks/useTitle";
 const SingleToy = () => {
   useTitle("Details")
   
-	const data = useLoaderData();
+  const data = useLoaderData();
+  
+  console.log(data);
 	return (
 		<div>
 			<div className="flex flex-col md:flex-row items-center justify-center">
 				<div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-6   bg-white rounded-lg shadow-lg overflow-hidden">
 					<img
 						className="mx-auto w-96"
-						src={data.photo}
+						src={data.images}
 						alt={data.name}
 					/>
 					<div className="p-6 space-y-4 flex flex-col justify-center">
@@ -36,7 +38,7 @@ const SingleToy = () => {
 								<p className="text-sm text-gray-500">
 									Only{" "}
 									<span className="font-black">
-										{data.quantity}
+										{data.stock}
 									</span>{" "}
 									in stock
 								</p>
@@ -57,7 +59,7 @@ const SingleToy = () => {
 
 							<div>
 								<p className="text-gray-700 font-light">
-									Seller: {data.seller_name}
+									Seller: {data.seller}
 								</p>
 
 								<p className="text-gray-700 font-light">

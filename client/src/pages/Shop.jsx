@@ -8,13 +8,13 @@ const Shop = () => {
 	const { cat } = useContext(myContext); //getting categories from contextProvider
 
 	useEffect(() => {
-		fetch("http://localhost:5000/shop")
+		fetch("https://khelnadokan.vercel.app/shop")
 			.then((res) => res.json())
 			.then((data) => setProducts(data));
 	}, []);
 
 	const handleCategorySearch = (subCat) => {
-		fetch(`http://localhost:5000/category/${subCat}`)
+		fetch(`https://khelnadokan.vercel.app/category/${subCat}`)
 			.then((res) => res.json())
 			.then((data) => {
 				setProducts(data);
@@ -25,7 +25,7 @@ const Shop = () => {
 		e.preventDefault();
 		const searchText = e.target[0].value;
 
-		fetch(`http://localhost:5000/search/${searchText}`)
+		fetch(`https://khelnadokan.vercel.app/search/${searchText}`)
 			.then((res) => res.json())
 			.then((data) => {
 				if (data.length === 0) {
@@ -40,7 +40,7 @@ const Shop = () => {
 	// const filterSearch = (e) => {
 	// 	const sortingOption = e.target.value;
 
-	// 	// fetch(`http://localhost:5000/shop?sort=${sortingOption}`)
+	// 	// fetch(`https://khelnadokan.vercel.app/shop?sort=${sortingOption}`)
 	// 	// 	.then((res) => res.json())
 	// 	// 	.then((data) => setProducts(data))
 	// 	// 	.catch((err) => console.log(err));
